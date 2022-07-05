@@ -17,4 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --release
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: git-deployer
+        path: target/release/git-deployer
